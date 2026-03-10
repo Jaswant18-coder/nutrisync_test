@@ -1,0 +1,136 @@
+{
+    "medical": {
+        "Diabetes": {
+            "max_carbs_g": 150,
+            "max_sugar_g": 25,
+            "forbidden": [
+                "refined sugar",
+                "sweets"
+            ]
+        },
+        "Hypertension": {
+            "max_sodium_mg": 1500,
+            "forbidden": [
+                "canned food",
+                "pickles"
+            ]
+        },
+        "CKD (Kidney Disease)": {
+            "max_protein_g": 60,
+            "max_potassium_mg": 2000,
+            "max_sodium_mg": 2000,
+            "forbidden": [
+                "bananas",
+                "tomatoes"
+            ]
+        },
+        "Celiac Disease": {
+            "forbidden": [
+                "wheat",
+                "barley",
+                "rye"
+            ]
+        },
+        "GERD": {
+            "forbidden": [
+                "spicy food",
+                "citrus",
+                "tomatoes",
+                "caffeine"
+            ]
+        }
+    },
+    "allergies": {
+        "Peanut": {
+            "forbidden": [
+                "peanuts",
+                "peanut butter"
+            ]
+        },
+        "Dairy": {
+            "forbidden": [
+                "milk",
+                "cheese",
+                "butter",
+                "yogurt",
+                "curd",
+                "paneer",
+                "ghee",
+                "cream",
+                "buttermilk"
+            ]
+        },
+        "Shellfish": {
+            "forbidden": [
+                "shrimp",
+                "crab",
+                "lobster"
+            ]
+        },
+        "Egg": {
+            "forbidden": [
+                "eggs"
+            ]
+        },
+        "Soy": {
+            "forbidden": [
+                "soy sauce",
+                "tofu",
+                "soybeans"
+            ]
+        }
+    },
+    "dietary_preferences": {
+        "Vegetarian": {
+            "forbidden": [
+                "chicken",
+                "beef",
+                "pork",
+                "fish",
+                "shellfish"
+            ]
+        },
+        "Vegan": {
+            "forbidden": [
+                "chicken",
+                "beef",
+                "pork",
+                "fish",
+                "shellfish",
+                "milk",
+                "cheese",
+                "butter",
+                "eggs",
+                "honey"
+            ]
+        },
+        "Non-Vegetarian": {
+            "forbidden": []
+        }
+    },
+    "religion": {
+        "Jain": {
+            "forbidden": [
+                "onions",
+                "garlic",
+                "potatoes",
+                "carrots",
+                "root vegetables"
+            ]
+        },
+        "Halal": {
+            "forbidden": [
+                "pork",
+                "alcohol",
+                "non-halal meat"
+            ]
+        },
+        "Kosher": {
+            "forbidden": [
+                "pork",
+                "shellfish",
+                "meat and dairy together"
+            ]
+        }
+    }
+}
