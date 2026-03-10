@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
+import fs from "fs";
 
 // Routes
 import patientRoutes from "./routes/patients";
@@ -65,12 +66,14 @@ app.use(
   }
 );
 
-// Serve frontend static files in production
+// Serve frontend static files in production (only if dist folder exists)
 const clientDir = path.join(__dirname, "../../dist");
-app.use(express.static(clientDir));
-app.get(/^(?!\/api).*/, (_req, res) => {
-  res.sendFile(path.join(clientDir, "index.html"));
-});
+if (fs.existsSync(clientDir)) {
+  app.use(express.static(clientDir));
+  app.get(/^(?!\/api).*/, (_req, res) => {
+    res.sendFile(path.join(clientDir, "index.html"));
+  });
+}
 
 const PORT = process.env.PORT || 5000;
 
