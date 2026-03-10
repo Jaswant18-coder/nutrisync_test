@@ -77,9 +77,13 @@ if (fs.existsSync(clientDir)) {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`🚀 NutriSync backend running on http://localhost:${PORT}`);
-  console.log(`📦 Database: Cloudflare D1 (${process.env.CF_D1_DATABASE_ID ?? "not configured"})`);
-});
+// For local development
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`🚀 NutriSync backend running on http://localhost:${PORT}`);
+    console.log(`📦 Database: Cloudflare D1 (${process.env.CF_D1_DATABASE_ID ?? "not configured"})`);
+  });
+}
 
+// Export for Vercel serverless
 export default app;
