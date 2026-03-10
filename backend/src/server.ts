@@ -34,21 +34,21 @@ const allowedOrigins = process.env.NODE_ENV === "production"
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json());
 
-// API Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/patients", patientRoutes);
-app.use("/api/meal-plans", mealPlanRoutes);
-app.use("/api/kitchen", kitchenRoutes);
-app.use("/api/tracking", trackingRoutes);
-app.use("/api/inventory", inventoryRoutes);
-app.use("/api/diet-groups", dietGroupRoutes);
-app.use("/api/reports", reportRoutes);
-app.use("/api/suggestions", suggestionRoutes);
-app.use("/api/chat", chatRoutes);
-app.use("/api/me", meRoutes);
+// API Routes (Vercel already routes to /api, so no prefix needed)
+app.use("/auth", authRoutes);
+app.use("/patients", patientRoutes);
+app.use("/meal-plans", mealPlanRoutes);
+app.use("/kitchen", kitchenRoutes);
+app.use("/tracking", trackingRoutes);
+app.use("/inventory", inventoryRoutes);
+app.use("/diet-groups", dietGroupRoutes);
+app.use("/reports", reportRoutes);
+app.use("/suggestions", suggestionRoutes);
+app.use("/chat", chatRoutes);
+app.use("/me", meRoutes);
 
 // Health check
-app.get("/api/health", (_req, res) => {
+app.get("/health", (_req, res) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 });
 
